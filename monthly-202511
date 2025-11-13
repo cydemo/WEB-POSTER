@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>우리는 결코 ‘신자유주의적’이었던 적이 없다 — 세미나 웹포스터</title>
+  <meta name="description" content="정용택(경희대학교) 발표: 자산화와 지대추구자정신의 시대 — 2025.11.17 동아대학교 융합지식과사회연구소 전문가 특강" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --panel:#0b1220;
+      --accent:#d6b25e; /* gold */
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --card-radius:18px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #071023 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    .poster{
+      width:1100px;
+      max-width:100%;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 20px 50px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      overflow:hidden;
+      padding:32px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+    }
+
+    /* left column */
+    .hero{
+      padding:28px;
+      border-radius:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      display:flex;flex-direction:column;gap:20px;
+      min-height:520px;
+    }
+    .kicker{
+      display:inline-block;padding:6px 12px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;font-size:13px;
+    }
+    h1{margin:0;font-size:34px;line-height:1.05;font-weight:800;letter-spacing:-0.02em}
+    .subtitle{color:var(--muted);font-weight:600}
+
+    .meta{
+      display:flex;gap:18px;align-items:center;margin-top:6px;color:var(--muted);font-weight:600;
+    }
+    .meta .when{display:inline-flex;gap:8px;align-items:center}
+
+    .lead{
+      margin-top:12px;color:#cfe6ff;line-height:1.6;font-size:15px;max-width:60ch;
+    }
+
+    .infographic{
+      margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:stretch;
+    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);}
+    .card h3{margin:0 0 8px 0;font-size:14px;color:var(--accent);font-weight:800}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+    .comparison{display:flex;flex-direction:column;gap:12px}
+    .row{display:flex;justify-content:space-between;align-items:center}
+    .row .label{color:var(--muted);font-weight:700}
+    .row .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;font-weight:700}
+
+    /* right column */
+    .side{
+      padding:20px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;flex-direction:column;gap:16px;min-height:520px;align-items:stretch;
+    }
+    .quote{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(214,178,94,0.06), rgba(214,178,94,0.02));border:1px solid rgba(214,178,94,0.12);
+      color:#fff;font-weight:600;font-size:14px;line-height:1.5;
+    }
+
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .stat{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;text-align:center}
+    .stat b{display:block;font-size:22px;color:var(--accent);font-weight:900}
+    .stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+
+    .keywords{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700;color:var(--muted);font-size:13px}
+
+    .cta{margin-top:auto;display:flex;gap:8px}
+    .btn{flex:1;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-weight:800}
+    .btn.primary{background:linear-gradient(90deg,var(--accent), #c9a455);color:#081018;box-shadow:0 8px 20px rgba(214,178,94,0.12)}
+    .btn.ghost{background:transparent;color:var(--muted)}
+
+    footer{grid-column:1/3;margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .poster{grid-template-columns:1fr;padding:20px}
+      .side{order:2}
+      footer{flex-direction:column;gap:8px;align-items:flex-start}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="poster" role="region" aria-label="세미나 웹포스터: 우리는 결코 신자유주의적이었던 적이 없다">
+    <section class="hero">
+      <span class="kicker">동아대학교 융합지식과사회연구소 전문가 특강</span>
+      <h1>우리는 결코 ‘신자유주의적’이었던 적이 없다</h1>
+      <div class="subtitle">자산화와 지대추구자정신의 시대</div>
+
+      <div class="meta">
+        <div class="when">📅 2025년 11월 17일</div>
+        <div class="speaker">👨‍🏫 발표: 정용택 (경희대학교 비교문화연구소)</div>
+      </div>
+
+      <p class="lead">현대 자본주의는 기업가정신이 지배하는 시대가 아니라, 법·기술·규제에 의한 <strong>자산화</strong>와 <strong>지대추구</strong>가 중심이 되는 시대로 전환되었다. 정용택 교수는 Kean Birch의 분석을 토대로 이 전환의 논리와 사회적 결과를 제시한다.</p>
+
+      <div class="infographic">
+        <div class="card">
+          <h3>핵심 과정</h3>
+          <p>자산화 (Assetization) — 모든 것을 미래의 수익 흐름으로 재구성하여 ‘자산’으로 변환한다.법·회계·기술 표준이 자산을 창출한다.</p>
+        </div>
+        <div class="card">
+          <h3>핵심 실천</h3>
+          <p>지대추구자정신 (Rentiership) — 생산이 아닌 소유와 통제를 통해 지대(불로소득)를 추출한다. 주택·IP·데이터가 주요 대상.</p>
+        </div>
+
+        <div class="card comparison" style="grid-column:1 / span 2;">
+          <h3>상품 논리 vs 자산 논리</h3>
+          <div class="row"><div class="label">상품</div><div class="chip">오늘 팔아 이익</div></div>
+          <div class="row"><div class="label">자산</div><div class="chip">미래의 지속적 수익</div></div>
+          <p style="margin-top:8px;color:var(--muted);font-size:13px">자산 논리는 경쟁이 아닌 독점과 지대의 논리로 작동한다. 무형자산의 부상(예: S&amp;P 500의 80% 가치)이 이를 보여준다.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <aside class="side" aria-label="요약 및 핵심 수치">
+      <div class="quote">“우리는 결코 신자유주의적이었던 적이 없다.” — Kean Birch<br><small style="color:var(--muted);font-weight:700">(자산화와 지대추구자정신이 지배하는 ‘자산 자본주의’의 도래)</small></div>
+
+      <div class="stats">
+        <div class="stat"><b>80%</b><span>S&amp;P500 가치 중 무형자산 비중 (1975→2010)</span></div>
+        <div class="stat"><b>↓ 17.1pp</b><span>한국 자영업 비율 감소 (1997:36.8% → 2025:19.7%)</span></div>
+        <div class="stat"><b>1.08T</b><span>미국 학자금 대출(2014, 달러)</span></div>
+        <div class="stat"><b>8.05T</b><span>미국 모기지 채무(2014, 달러)</span></div>
+      </div>
+
+      <div>
+        <h4 style="margin:0 0 8px 0;color:var(--accent)">주요 키워드</h4>
+        <div class="keywords">
+          <span class="tag">#자산화</span>
+          <span class="tag">#지대추구</span>
+          <span class="tag">#무형자산</span>
+          <span class="tag">#자산자본주의</span>
+          <span class="tag">#주택위기</span>
+          <span class="tag">#KeanBirch</span>
+        </div>
+      </div>
+
+      <div style="margin-top:8px;color:var(--muted);font-size:13px">더 자세한 자료는 발표문(정용택, 2025)을 참고하세요.</div>
+
+      <div class="cta">
+        <a class="btn primary" href="https://www.donga.ac.kr/icks/CMS/Board/Board.do?mCode=MN023" target="_blank">자료 다운로드</a>
+        <a class="btn ghost" href="#" onclick="alert('구글 링크 곧 개설')">참가 등록</a>
+      </div>
+
+    </aside>
+
+    <footer>
+      <div>발표자: 정용택 (경희대학교 비교문화연구소) • 주최: 동아대학교 융합지식과사회연구소</div>
+      <div>문의: <a href="https://www.donga.ac.kr/icks" target="_blank">https://www.donga.ac.kr/icks</a></div>
+    </footer>
+  </div>
+
+</body>
+</html>
